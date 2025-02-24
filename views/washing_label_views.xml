@@ -1,0 +1,41 @@
+<odoo>
+    <!-- Vista a elenco per le etichette di lavaggio -->
+    <record id="view_tech_fashion_washing_label_list" model="ir.ui.view">
+        <field name="name">tech.fashion.washing.label.list</field>
+        <field name="model">tech.fashion.washing.label</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="description"/>
+                <field name="image" widget="image"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Vista modulo per le etichette di composizione -->
+    <record id="view_tech_fashion_washing_label_form" model="ir.ui.view">
+        <field name="name">tech.fashion.washing.label.form</field>
+        <field name="model">tech.fashion.washing.label</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="image" widget="image"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Azione per aprire la vista a elenco -->
+    <record id="action_tech_fashion_washing_label" model="ir.actions.act_window">
+        <field name="name">Etichette di Lavaggio</field>
+        <field name="res_model">tech.fashion.washing.label</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Menu di configurazione -->
+    <menuitem id="menu_washing_label" name="Etichette Lavaggio" parent="mrp.menu_mrp_bom" action="action_tech_fashion_washing_label" sequence="15"/>
+</odoo>

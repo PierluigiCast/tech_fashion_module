@@ -1,0 +1,45 @@
+<odoo>
+    <!-- Vista a elenco per le etichette di lavaggio -->    
+    <record id="view_tech_fashion_composition_label_list" model="ir.ui.view">
+        <field name="name">tech.fashion.composition.label.list</field>
+        <field name="model">tech.fashion.composition.label</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="engname"/>
+                <field name="japname"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Vista modulo per le etichette di composizione -->
+    <record id="view_tech_fashion_composition_label_form" model="ir.ui.view">
+        <field name="name">tech.fashion.composition.label.form</field>
+        <field name="model">tech.fashion.composition.label</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="engname"/>
+                        <field name="japname"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Aggiungi un'azione per aprire la vista delle composizioni -->
+    <record id="action_tech_fashion_composition_label" model="ir.actions.act_window">
+        <field name="name">Composizioni</field>
+        <field name="res_model">tech.fashion.composition.label</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Aggiungi un menu per l'azione sotto il menu Inventario -> Prodotti -->
+    <menuitem id="menu_composition_label" name="Etichette Composizione" parent="stock.menu_stock_inventory_control" action="action_tech_fashion_composition_label" sequence="20"/>
+     <!-- Aggiungi un menu per l'azione sotto il menu Produzione -> Prodotti -->
+    <menuitem id="menu_composition_label2" name="Etichette Composizione" parent="mrp.menu_mrp_bom" action="action_tech_fashion_composition_label" sequence="20"/>
+
+</odoo>
+

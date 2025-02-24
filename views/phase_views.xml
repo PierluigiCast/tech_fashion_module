@@ -1,0 +1,37 @@
+<odoo>
+    <!-- Vista a elenco per le etichette di lavaggio -->
+    <record id="view_tech_fashion_phase_list" model="ir.ui.view">
+        <field name="name">tech.fashion.phase.list</field>
+        <field name="model">tech.fashion.phase</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Vista modulo per le etichette di composizione -->
+    <record id="view_tech_fashion_phase_form" model="ir.ui.view">
+        <field name="name">tech.fashion.phase.form</field>
+        <field name="model">tech.fashion.phase</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Azione per aprire la vista a elenco -->
+    <record id="action_tech_fashion_phase" model="ir.actions.act_window">
+        <field name="name">Fasi di Lavorazione</field>
+        <field name="res_model">tech.fashion.phase</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Menu di configurazione -->
+    <menuitem id="menu_phase" name="Fasi Di Lavorazione" parent="mrp.menu_mrp_bom" action="action_tech_fashion_phase" sequence="16"/>
+</odoo>

@@ -1,0 +1,46 @@
+<odoo>
+    <!-- Estendi la vista della BOM -->
+    <record id="view_mrp_bom_form_custom_bom_cost" model="ir.ui.view">
+        <field name="name">mrp.bom.form.custom.bom.cost</field>
+        <field name="model">mrp.bom</field>
+        <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+        <field name="arch" type="xml">
+            <!-- Campo Costi per Variante nella BOM -->
+            <xpath expr="//field[@name='product_tmpl_id']" position="after">
+                <field name="update_list_price"/>
+                <field name="variant_costs" readonly="1" nolabel="0"/>
+            </xpath>
+
+            <!-- PREZZO A LISTINO -->
+            <xpath expr="//field[@name='code']" position="after">
+                <field name="profit_margin"/>
+                <field name="all_lists" readonly="1" nolabel="0"/>
+            </xpath>
+
+            <!-- Aggiungi un nuovo tab per le etichette di composizione -->
+            <xpath expr="//notebook" position="inside">
+                <page string="Laboratori">
+                    <field name="phase_ids" string=" ">
+                        <list editable="bottom">
+                            <field name="sequence" widget="handle"/>
+                            <field name="sequence"/>
+                            <field name="phase_id"/>
+                            <field name="laboratory_id"/>
+                            <field name="variant_ids" domain="[('id', 'in', allowed_variant_ids)]" widget="many2many_tags"/>
+                            <field name="time"/>
+                            <field name="price"/>
+                            <field name="tot_cost"/>
+                        </list>
+                    </field>
+                </page>
+                <page string="Etic. Lavaggio">
+                    <group>
+                        <field name="washing_label_ids" widget="many2many_tags"/>
+                    </group>
+                </page>
+            </xpath>
+
+            
+        </field>
+    </record>
+</odoo>

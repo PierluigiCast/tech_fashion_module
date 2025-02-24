@@ -1,0 +1,34 @@
+<odoo>
+    
+    <record id="phase_mod" model="tech.fashion.phase">
+        <field name="name">Modello</field>
+    </record>
+
+    <record id="phase_cut" model="tech.fashion.phase">
+        <field name="name">Taglio</field>
+    </record>
+
+    <record id="phase_print" model="tech.fashion.phase">
+        <field name="name">Stampa</field>
+    </record>
+
+    <record id="phase_embroidery" model="tech.fashion.phase">
+        <field name="name">Ricamo</field>
+    </record>
+
+    <record id="phase_conf" model="tech.fashion.phase">
+        <field name="name">Confezione</field>
+    </record>
+
+    <record id="phase_wash" model="tech.fashion.phase">
+        <field name="name">Lavaggio</field>
+    </record>
+
+    <record id="phase_iron" model="tech.fashion.phase">
+        <field name="name">Stiro</field>
+    </record>
+
+    <record id="phase_control" model="tech.fashion.phase">
+        <field name="name">Controllo</field>
+    </record>
+</odoo>

@@ -1,0 +1,5 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_tech_fashion_washing_label,access_tech_fashion_washing_label,model_tech_fashion_washing_label,,1,1,1,1
+access_tech_fashion_composition_label,access_tech_fashion_composition_label,model_tech_fashion_composition_label,,1,1,1,1
+access_tech_fashion_phase_lab,access_tech_fashion_phase_lab,model_tech_fashion_phase_lab,,1,1,1,1
+access_tech_fashion_phase,access_tech_fashion_phase,model_tech_fashion_phase,,1,1,1,1
